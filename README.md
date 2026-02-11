@@ -44,23 +44,41 @@ This architecture mirrors enterprise-grade Azure platform engineering patterns.
                            ▼
 ```
 
+
 ┌────────────────────────────────────────────────────────────┐
+
 │                        AKS Cluster                         │
+
 │                                                            │
+
 │   Namespace: core                                          │
+
 │   ├── nerve-center                                         │
+
 │                                                            │
+
 │   Namespace: workers                                       │
+
 │   ├── order-processor                                      │
+
 │   ├── retry-worker                                         │
+
 │   └── KEDA ScaledObjects                                   │
+
 │                                                            │
+
 │   Namespace: keda                                          │
+
 │   └── keda-operator                                        │
+
 │                                                            │
+
 └────────────────────────────────────────────────────────────┘
+
 │                         │
+
 ▼                         ▼
+
 Azure Service Bus          Azure Cosmos DB
 (Topic + Subscriptions)     (RBAC Only Access)
 
@@ -123,7 +141,8 @@ GET /system-state
 
 ### 📷 IMAGE G – Port Forward to Nerve Center
 
-> (Replace with real screenshot)
+> <img width="873" height="291" alt="image" src="https://github.com/user-attachments/assets/3c5c3396-b124-4771-ade4-5f7aa9afee39" />
+
 
 ```
 
@@ -135,13 +154,15 @@ kubectl port-forward -n core deployment/nerve-center 8080:8080
 
 ### 📷 IMAGE H – Pause Processing Response
 
-> curl localhost/pause-processing
+> <img width="940" height="401" alt="image" src="https://github.com/user-attachments/assets/db475863-42d8-4b71-a4e9-7a4afd0e227e" />
+
 
 ---
 
 ### 📷 IMAGE I – System State Check (200 OK)
 
-> curl localhost/system-state
+> <img width="861" height="392" alt="image" src="https://github.com/user-attachments/assets/857fe715-8cd8-4530-b132-29f1261e47dd" />
+
 
 ---
 
@@ -179,7 +200,8 @@ KEDA monitors message count and scales deployments.
 
 ### 📷 IMAGE C – Service Bus Namespace (Azure Portal)
 
-> (Insert screenshot)
+> <img width="901" height="422" alt="image" src="https://github.com/user-attachments/assets/00387330-e052-4358-8822-639803cc0121" />
+
 
 ---
 
@@ -242,11 +264,15 @@ Scaling behavior:
 
 ### 📷 IMAGE A – Helm Install KEDA
 
+<img width="940" height="475" alt="image" src="https://github.com/user-attachments/assets/94dacb1b-4e9e-40a1-a913-5782db604578" />
+
 > helm install keda kedacore/keda --namespace keda --create-namespace
 
 ---
 
 ### 📷 IMAGE B – KEDA Pods Running
+
+<img width="940" height="431" alt="image" src="https://github.com/user-attachments/assets/f747366d-ea22-45d4-a676-ac2e343044c2" />
 
 > kubectl get pods -n keda
 
@@ -273,6 +299,8 @@ Manual drift is reverted automatically.
 
 ### 📷 IMAGE J – Argo CD UI
 
+<img width="940" height="509" alt="image" src="https://github.com/user-attachments/assets/f032f452-7c24-4822-ba28-5d4d4b7dae13" />
+
 > (Insert screenshot)
 
 ---
@@ -284,14 +312,12 @@ Manual drift is reverted automatically.
 ---
 
 ### 📷 IMAGE F – Docker Build
-
----
-
-### 📷 IMAGE E – Docker Login
+<img width="940" height="456" alt="image" src="https://github.com/user-attachments/assets/21673e87-e5e2-4557-bd98-b6dcd564bc6c" />
 
 ---
 
 Images pushed to Docker Hub:
+<img width="1877" height="1017" alt="image" src="https://github.com/user-attachments/assets/4c83ddfe-901e-426d-a0b6-c3ea1b535faa" />
 
 ```
 jukpozi/order-processor:latest
