@@ -23,3 +23,10 @@ override.tf.json
 # Ignore Kubernetes secrets
 k8s/**/secret.yaml
 *secret.yaml
+
+
+__pycache__/
+*.pyc
+.env
+terraform.tfstate
+terraform.tfstate.backup
