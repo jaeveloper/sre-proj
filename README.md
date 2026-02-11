@@ -135,9 +135,6 @@ POST /pause-processing
 
 GET /system-state
 
-```
-
----
 
 ### 📷 IMAGE G – Port Forward to Nerve Center
 
@@ -146,15 +143,21 @@ GET /system-state
 
 ```
 
+---
+
+
+```
+
 kubectl port-forward -n core deployment/nerve-center 8080:8080
 
-````
 
 ---
 
 ### 📷 IMAGE H – Pause Processing Response
 
 > <img width="940" height="401" alt="image" src="https://github.com/user-attachments/assets/db475863-42d8-4b71-a4e9-7a4afd0e227e" />
+
+
 
 
 ---
@@ -165,6 +168,9 @@ kubectl port-forward -n core deployment/nerve-center 8080:8080
 
 
 ---
+
+````
+
 
 ## 2️⃣ Worker Services
 
@@ -197,12 +203,12 @@ No stored keys.
 KEDA monitors message count and scales deployments.
 
 ---
-
+````
 ### 📷 IMAGE C – Service Bus Namespace (Azure Portal)
 
 > <img width="901" height="422" alt="image" src="https://github.com/user-attachments/assets/00387330-e052-4358-8822-639803cc0121" />
 
-
+````
 ---
 
 ## 4️⃣ Azure Cosmos DB (Data Layer)
