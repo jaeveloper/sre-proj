@@ -44,41 +44,23 @@ This architecture mirrors enterprise-grade Azure platform engineering patterns.
                            ▼
 ```
 
-
 ┌────────────────────────────────────────────────────────────┐
-
 │                        AKS Cluster                         │
-
 │                                                            │
-
 │   Namespace: core                                          │
-
 │   ├── nerve-center                                         │
-
 │                                                            │
-
 │   Namespace: workers                                       │
-
 │   ├── order-processor                                      │
-
 │   ├── retry-worker                                         │
-
 │   └── KEDA ScaledObjects                                   │
-
 │                                                            │
-
 │   Namespace: keda                                          │
-
 │   └── keda-operator                                        │
-
 │                                                            │
-
 └────────────────────────────────────────────────────────────┘
-
 │                         │
-
 ▼                         ▼
-
 Azure Service Bus          Azure Cosmos DB
 (Topic + Subscriptions)     (RBAC Only Access)
 
